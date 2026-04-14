@@ -482,15 +482,27 @@ const SlideCta = () => (
           className="flex flex-col gap-10"
         >
           <div className="flex flex-col items-center gap-4">
-            <div className="bg-white p-4 rounded-xl shadow-2xl shadow-black/50">
+            <a
+              href="https://das.isb-eng.kz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open das.isb-eng.kz in a new tab"
+              className="bg-white p-4 rounded-xl shadow-2xl shadow-black/50 transition-transform hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            >
               <img src="/08_qr_audit.svg" alt="QR Audit" className="w-48 h-48 md:w-56 md:h-56" />
-            </div>
+            </a>
             <div className="font-mono text-lg tracking-widest uppercase text-white font-medium">Аудит</div>
           </div>
           <div className="flex flex-col items-center gap-4">
-            <div className="bg-white p-4 rounded-xl shadow-2xl shadow-black/50">
+            <a
+              href="https://isb-eng.kz/upload/portfolio/portfolio.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open portfolio PDF in a new tab"
+              className="bg-white p-4 rounded-xl shadow-2xl shadow-black/50 transition-transform hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            >
               <img src="/09_qr_projects.svg" alt="QR Projects" className="w-48 h-48 md:w-56 md:h-56" />
-            </div>
+            </a>
             <div className="font-mono text-lg tracking-widest uppercase text-white font-medium">Проекты</div>
           </div>
         </motion.div>
