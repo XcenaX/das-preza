@@ -58,7 +58,7 @@ const SlideHero = () => (
         className="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold uppercase leading-[1.1] tracking-tighter mb-10"
       >
         ВХОДИМ НА ЛЮБОМ ЭТАПЕ ЖИЗНИ ОБЪЕКТА<br/>
-        <span className="text-accent">ОСТАЁМСЯ НАВСЕГДА</span>
+        <span className="text-accent">СТАНОВИМСЯ ОСНОВОЙ ВАШЕГО КОНТРОЛЯ</span>
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 30 }}
@@ -67,7 +67,7 @@ const SlideHero = () => (
         className="text-xl md:text-2xl text-white/70 max-w-3xl font-light leading-relaxed"
       >
         <span className="text-white font-medium tracking-wide">Проектирование • монтаж • запуск • эксплуатация</span><br/>
-        на каждом этапе вы получаете контроль над инженерными системами безопасности
+        На каждом этапе вы понимаете, что происходит с системами безопасности
       </motion.p>
     </div>
   </SlideWrapper>
@@ -106,8 +106,14 @@ const SlideLifecycle = () => {
         <div className="lg:col-span-6 lg:col-start-7">
           <div className="flex flex-col gap-10 relative">
             <div className="absolute left-[7px] top-4 bottom-4 w-px bg-white/10 z-0 hidden md:block" />
+            <div className="absolute left-[6px] top-4 bottom-4 w-[3px] overflow-hidden hidden md:block z-0">
+              <motion.div
+                className="absolute left-0 w-full h-24 rounded-full bg-gradient-to-b from-transparent via-accent to-transparent opacity-90 blur-[1px]"
+                animate={{ y: ['-15%', '560%'] }}
+                transition={{ duration: 2.8, repeat: Infinity, ease: 'linear' }}
+              />
+            </div>
             {stages.map((stage, idx) => {
-              const isActive = activeIndex === idx;
               return (
                 <motion.div 
                   key={idx}
@@ -117,10 +123,10 @@ const SlideLifecycle = () => {
                   className="relative z-10 flex gap-8 items-start cursor-pointer group"
                   onMouseEnter={() => setActiveIndex(idx)}
                 >
-                  <div className={`w-4 h-4 mt-2 rounded-full border-2 shrink-0 transition-all duration-500 ${isActive ? 'border-accent bg-accent shadow-[0_0_15px_rgba(255,69,0,0.6)] scale-125' : 'bg-industrial-800 border-white/20 group-hover:border-white/50'}`} />
-                  <div className={`transition-all duration-500 ${isActive ? 'opacity-100 translate-x-2' : 'opacity-40 group-hover:opacity-60'}`}>
-                    <h3 className={`font-display text-2xl md:text-3xl font-bold mb-2 uppercase tracking-wide ${isActive ? 'text-white' : 'text-white/70'}`}>{stage.title}</h3>
-                    <p className={`leading-relaxed text-lg md:text-xl ${isActive ? 'text-white/90' : 'text-white/50'}`}>{stage.desc}</p>
+                  <div className="w-4 h-4 mt-2 rounded-full border-2 shrink-0 transition-all duration-500 border-accent bg-accent shadow-[0_0_18px_rgba(255,69,0,0.65)]" />
+                  <div className="translate-x-2">
+                    <h3 className="font-display text-2xl md:text-3xl font-bold mb-2 uppercase tracking-wide text-white">{stage.title}</h3>
+                    <p className="leading-relaxed text-lg md:text-xl text-white/90">{stage.desc}</p>
                   </div>
                 </motion.div>
               );
@@ -139,10 +145,10 @@ const SlideManifest = () => (
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.3, duration: 1.2, ease: "easeOut" }}
-        className="font-display text-4xl md:text-6xl lg:text-[5rem] font-bold uppercase leading-[1.2] tracking-tighter max-w-5xl"
+        className="font-display text-4xl md:text-6xl lg:text-[5rem] font-bold uppercase leading-[1.2] tracking-tighter max-w-6xl"
       >
-        НЕ ВАЖНО НА КАКОЙ СТАДИИ ВАШ ОБЪЕКТ<br/>
-        <span className="text-accent">МЫ ЗНАЕМ КАК ВЗЯТЬ ЕГО ПОД КОНТРОЛЬ</span>
+        <span className="block lg:whitespace-nowrap lg:-translate-x-16">ПРОБЛЕМА НЕ В СТАДИИ ОБЪЕКТА</span>
+        <span className="text-accent">ПРОБЛЕМА В ТОМ, ЧТО НЕТ ОБЪЕКТИВНОЙ КАРТИНЫ</span>
       </motion.h2>
     </div>
   </SlideWrapper>
@@ -165,7 +171,7 @@ const SlideObjection = () => (
         transition={{ delay: 0.4, duration: 0.8 }}
         className="text-2xl md:text-4xl font-light leading-relaxed mb-16 max-w-5xl"
       >
-        Вы можете прямо сейчас показать реальное состояние каждой системы безопасности? Не по словам подрядчика а с доказательствами?
+        Вы можете прямо сейчас показать, в каком состоянии находятся системы безопасности? Не со слов подрядчика, а по факту?
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -176,12 +182,12 @@ const SlideObjection = () => (
         <div className="bg-white/5 border border-white/10 p-8 rounded-xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-1 h-full bg-green-500/50" />
           <div className="text-white/40 font-mono text-sm mb-4 uppercase tracking-widest">Ожидание</div>
-          <div className="text-2xl font-light text-white/80"><span className="text-green-500 font-medium">WhatsApp</span> фиксирует переписку</div>
+          <div className="text-2xl font-light text-white/80">В <span className="text-green-500 font-medium">WhatsApp</span> остаётся только переписка</div>
         </div>
         <div className="bg-industrial-800 border border-accent/30 p-8 rounded-xl relative overflow-hidden shadow-[0_0_30px_rgba(255,69,0,0.1)]">
           <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
           <div className="text-accent font-mono text-sm mb-4 uppercase tracking-widest">Реальность</div>
-          <div className="text-2xl font-light text-white"><span className="text-accent font-medium">DAS</span> фиксирует факты</div>
+          <div className="text-2xl font-light text-white"><span className="text-accent font-medium">DAS</span> собирает доказательства и показывает реальную картину</div>
         </div>
       </motion.div>
     </div>
@@ -196,17 +202,17 @@ const SlideDas = () => (
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="font-display text-5xl md:text-6xl font-bold uppercase leading-[1.1] tracking-tighter mb-8"
-        >
-          <span className="text-accent">DAS</span> РЕАЛЬНОЕ СОСТОЯНИЕ СИСТЕМ
+        className="font-display text-5xl md:text-6xl font-bold uppercase leading-[1.1] tracking-tighter mb-8"
+      >
+          <span className="text-accent">DAS</span> ПОКАЗЫВАЕТ РЕАЛЬНОЕ СОСТОЯНИЕ СИСТЕМ
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-xl text-white/70 leading-relaxed"
-        >
-          Цифровой аудит показывает реальное состояние инженерных систем — не на бумаге а в живом отчёте с доказательствами
+        transition={{ delay: 0.5, duration: 0.8 }}
+        className="text-xl text-white/70 leading-relaxed"
+      >
+          Цифровой аудит показывает реальное состояние инженерных систем в отчёте с фото, фактами и доказательствами
         </motion.p>
       </div>
       
@@ -285,13 +291,15 @@ const SlideCpo = () => (
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-2xl text-white/70 leading-relaxed flex flex-col gap-8"
-        >
-          <p>Каждое нарушение превращается в задачу с владельцем сроком и статусом</p>
-          <div className="border-l-2 border-accent pl-6 py-2 flex flex-col gap-2">
-            <div className="text-white font-medium tracking-wide uppercase text-xl">Ничего не теряется</div>
-            <div className="text-white font-medium tracking-wide uppercase text-xl">Ничего не закрывается на бумаге</div>
+        transition={{ delay: 0.5, duration: 0.8 }}
+        className="text-2xl text-white/70 leading-relaxed flex flex-col gap-8"
+      >
+          <p className="border-l-2 border-accent bg-industrial-900/35 backdrop-blur-md rounded-r-2xl pl-6 pr-6 py-5 text-white shadow-[0_18px_50px_rgba(0,0,0,0.18)]">
+            Каждое нарушение становится задачей с ответственным, сроком и статусом
+          </p>
+          <div className="border-l-2 border-accent bg-industrial-900/35 backdrop-blur-md rounded-r-2xl pl-6 pr-6 py-5 flex flex-col gap-2 shadow-[0_18px_50px_rgba(0,0,0,0.18)]">
+            <div className="text-white font-medium tracking-wide uppercase text-xl">Каждая задача под контролем</div>
+            <div className="text-white font-medium tracking-wide uppercase text-xl">Закрываем не отчёты, а реальные проблемы</div>
           </div>
         </motion.div>
       </div>
@@ -300,9 +308,9 @@ const SlideCpo = () => (
 );
 
 const SlideIos = () => (
-  <SlideWrapper bgImage="/04_ios_control_panel_detail.jpg" overlayOpacity="bg-industrial-900/85">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
-      <div className="lg:col-span-4">
+    <SlideWrapper bgImage="/04_ios_control_panel_detail.jpg" overlayOpacity="bg-industrial-900/85">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
+      <div className="lg:col-span-5">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -314,16 +322,16 @@ const SlideIos = () => (
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-2xl text-white/70 leading-relaxed"
-        >
-          Руководитель видит состояние своих объектов критические зоны динамику нарушений и то что выходит из-под контроля{' '}
+        transition={{ delay: 0.5, duration: 0.8 }}
+        className="rounded-r-2xl border-l-2 border-accent bg-industrial-900/35 px-6 py-5 text-2xl text-white leading-relaxed backdrop-blur-md shadow-[0_18px_50px_rgba(0,0,0,0.18)]"
+      >
+          Руководитель видит состояние объектов, критические зоны и динамику нарушений. И замечает, что выходит из-под контроля,{' '}
           <span className="inline-flex items-center rounded-md border border-accent/40 bg-accent/15 px-3 py-1 text-white shadow-[0_0_24px_rgba(255,69,0,0.12)]">
-            до аварии
+            ещё до аварии
           </span>
         </motion.p>
       </div>
-      <div className="lg:col-span-8">
+      <div className="lg:col-span-7">
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -384,9 +392,9 @@ const SlideTrust = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-xl md:text-2xl text-white/70 leading-relaxed border-l-2 border-accent pl-8 py-2"
+            className="rounded-r-2xl border-l-2 border-accent bg-industrial-900/35 px-8 py-5 text-xl md:text-2xl text-white leading-relaxed backdrop-blur-md shadow-[0_18px_50px_rgba(0,0,0,0.18)]"
           >
-            Среди клиентов Казахстан Парамаунт Инжиниринг, объекты госуровня и промышленности РК
+            Среди клиентов - "Kazakhstan Paramount Engineering", объекты государственного уровня и промышленные предприятия Казахстана
           </motion.div>
         </div>
         
@@ -424,15 +432,36 @@ const SlideCta = () => (
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-xl md:text-2xl text-white/70 leading-relaxed mb-16 max-w-2xl"
-        >
-          Покажем реальное состояние систем безопасности с отчётом и конкретными нарушениями за{' '}
+        transition={{ delay: 0.4, duration: 0.8 }}
+        className="text-xl md:text-2xl text-white/70 leading-relaxed mb-16 max-w-2xl"
+      >
+          За{' '}
           <span className="inline-flex items-center rounded-md border border-accent/40 bg-accent/15 px-3 py-1 text-white shadow-[0_0_24px_rgba(255,69,0,0.12)]">
-            1–2 дня
+            1 – 2 дня
           </span>
+          {' '}покажем, что реально происходит с системами безопасности, и дадим отчёт с конкретными нарушениями
         </motion.p>
         
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.48, duration: 0.8 }}
+          className="mb-12 max-w-3xl rounded-2xl border border-accent/20 bg-white/6 px-6 py-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur-sm"
+        >
+          <div className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight text-white">
+            ВЫСТАВОЧНОЕ ПРЕДЛОЖЕНИЕ
+          </div>
+          <div className="mt-3 inline-flex items-center rounded-full border border-accent/30 bg-accent/12 px-4 py-1.5 text-sm md:text-base font-medium uppercase tracking-wide text-accent shadow-[0_10px_24px_rgba(255,69,0,0.12)]">
+            До 31.05.2026
+          </div>
+          <div className="mt-5 text-xl md:text-2xl font-semibold text-white">
+            Приоритетный выезд для первых 3 объектов
+          </div>
+          <div className="mt-3 text-lg md:text-xl leading-relaxed text-white/70">
+            На выставке фиксируем дату выезда и стоимость аудита на текущих условиях. После 31 мая действуют стандартные сроки и условия.
+          </div>
+        </motion.div>
+
         {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
